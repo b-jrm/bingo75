@@ -1,17 +1,20 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container-fluid">
+    <Simulator/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Simulator from './components/SimulatorComponent.vue'
+// Importamos JQuery
+const $ = require('jquery')
+// Lo declaramos globalmente
+window.$ = $
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Simulator
   }
 }
 </script>
