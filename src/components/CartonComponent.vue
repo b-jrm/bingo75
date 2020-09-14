@@ -180,16 +180,20 @@ export default {
         }
         // Validación si la cantidad de coordenadas validas es igual al modo de juego original
         if (countTrue === this.game.mode.coordinates[i].length) {
+          this.game.countWinner++ // Aumentar en 1 la cantidad de formas validas en que se ha ganado
           validation.win = true // El carton de juego del bingo recorrido es ganador
-          this.game.final = true
-          this.sound.win = 'sounds/winner_male.mp3'
         } else {
-          validation.win = false // El carton de juego del bingo recorrido no es ganador
-          this.game.final = false
-          this.sound.win = 'sounds/losser_male.mp3'
+          validation.win = false // El carton de juego del bingo recorrido no es valido
         }
         // Agregar el objeto resultanto en el arreglo de resultados por cada bingo ganador recorrido
         resultValidated.push(validation)
+      }
+      if (this.game.countWinner > 0) {
+        this.game.final = true
+        this.sound.win = 'winner_male'
+      } else {
+        this.game.final = false
+        this.sound.win = 'losser_male'
       }
       this.game.pause = true
       this.game.result = resultValidated

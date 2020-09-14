@@ -8,7 +8,7 @@ export default new Vuex.Store({
     namespaced: true,
     sound: {
       serie: '', // Audio dinamico de cada serie del juego en curso
-      start: '@/sounds/start_male.mp3', // Mensaje al iniciar un juego
+      start: 'start_male.mp3', // Mensaje al iniciar un juego
       win: '' // Mansaje resultado ganador/perdedor
     },
     game: {
@@ -151,7 +151,8 @@ export default new Vuex.Store({
       seriesPlayer: [], // Series en las que el jugador ha dado clic en el carton
       coordinatesActive: [], // coordenadas en las que el jugador ha dado clic en el carton concatenado con _ con la serie
       result: [], // Arreglo de resultados
-      final: null // Resultado final ganador o perdedor
+      final: null, // Resultado final ganador o perdedor
+      countWinner: 0 // Resultado final ganador o perdedor
     },
     table: [
       { letter: 'B', range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] },

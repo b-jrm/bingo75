@@ -134,8 +134,11 @@
           <!-- FINISHED -->
           <div class="row" key="4" v-if="game.start && game.status && game.pause && game.result.length > 0">
             <div class="col-md-12 text-center p-5 d-flex flex-column">
-              <audio v-if="game.final !== null" :src="sound.win" autoplay></audio>
+              <audio v-if="game.final !== null" :src='"@/sounds/"+sound.win+".mp3"' autoplay></audio>
               <h2>JUEGO FINALIZADO</h2>
+              <br>
+              <p v-if="game.final && game.countWinner == 1">OHH!, QUE BIEN, TU CARTON A OBTENIDO {{ game.countWinner }} FORMA GANADORA</p>
+              <p v-if="game.final && game.countWinner > 1">OHH!, QUE BIEN, TU CARTON A OBTENIDO {{ game.countWinner }} FORMAS GANADORAS</p>
               <br>
               <Finish></Finish>
               <br>
