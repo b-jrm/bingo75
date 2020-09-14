@@ -8,7 +8,7 @@ export default new Vuex.Store({
     namespaced: true,
     sound: {
       serie: '', // Audio dinamico de cada serie del juego en curso
-      start: 'sounds/start_male.mp3', // Mensaje al iniciar un juego
+      start: '@/sounds/start_male.mp3', // Mensaje al iniciar un juego
       win: '' // Mansaje resultado ganador/perdedor
     },
     game: {

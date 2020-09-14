@@ -64,7 +64,7 @@
           <!-- GAME -->
           <div class="row" key="2" v-if="game.start && game.status && !game.pause && game.result.length == 0">
             <div class="col-md-12">
-              <audio v-if="game.sequence.length == 0" :src="sound.start" autoplay></audio>
+              <audio v-if="game.sequence.length == 0" :src='"@/sounds/start_male.mp3"' autoplay></audio>
               <Market></Market>
               <div class="row text-center">
                 <div class="col-md-9 m-0 p-0">
@@ -76,11 +76,11 @@
                             <div class="col-md-12 m-0 p-5 d-flex justify-content-center">
                               <transition name="bounce" mode="out-in">
                                 <div v-if="game.round" class="ball" key="one">
-                                  <audio :src="sound.serie" autoplay></audio>
+                                  <audio v-if="sound.serie !== ''" :src='"@/sounds/"+sound.serie+".mp3"' autoplay></audio>
                                   {{ game.serie }}
                                 </div>
                                 <div v-if="!game.round" class="ball" key="two">
-                                  <audio :src="sound.serie" autoplay></audio>
+                                  <audio v-if="sound.serie !== ''" :src='"@/sounds/"+sound.serie+".mp3"' autoplay></audio>
                                   {{ game.serie }}
                                 </div>
                               </transition>
@@ -168,7 +168,7 @@ export default {
     }
   },
   created () {
-    // console.log(this.game)
+    // console.log(this.sound.start)
   },
   updated () {
     // console.log(this.game)
@@ -262,8 +262,8 @@ export default {
       this.game.sequence.push(newRound)
       this.findObjectmarket(number)
       this.game.round = !this.game.round
-      this.sound.serie = 'sounds/' + newRound + '.mp3'
-      this.sound.serie = 'sounds/' + newRound + '.mp3'
+      this.sound.serie = newRound
+      console.log(this.sound.serie)
       setTimeout(() => { $('.btn-round').attr('disabled', false) }, 2000)
     },
     // Buscar el índice de la tabla de marcación segun numero dado en serie de setRound
