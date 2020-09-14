@@ -263,7 +263,6 @@ export default {
       this.findObjectmarket(number)
       this.game.round = !this.game.round
       this.sound.serie = newRound
-      console.log(this.sound.serie)
       setTimeout(() => { $('.btn-round').attr('disabled', false) }, 2000)
     },
     // Buscar el índice de la tabla de marcación segun numero dado en serie de setRound
