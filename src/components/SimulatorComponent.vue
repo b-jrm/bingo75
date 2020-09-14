@@ -67,10 +67,10 @@
               <audio v-if="game.sequence.length == 0" :src="sound.start" autoplay></audio>
               <Market></Market>
               <div class="row text-center">
-                <div class="col-md-10 m-0 p-0">
+                <div class="col-md-8 m-0 p-0">
                   <div class="row">
-                    <div class="col-md-4 border d-flex flex-column justify-content-center align-items-center">
-                      <div class="row">
+                    <div class="col-md-4">
+                      <div class="row d-flex flex-row justify-content-center align-items-center">
                         <div class="col-md-8 d-flex flex-column justify-content-center align-items-center">
                           <div class="row">
                             <div class="col-md-12 m-0 p-5 d-flex justify-content-center">
@@ -93,17 +93,17 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-4 p-1" style="height: 400px; max-height: 400px; overflow-y: scroll !important;">
+                        <div class="col-md-4 m-0 p-3 sequence-content">
                           <Sequence></Sequence>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-8 border d-flex justify-content-center content-cartons">
+                    <div class="col-md-8 border d-flex flex-row justify-content-center content-cartons">
                         <Carton v-for="(c,i) in game.countCartons" :key="i" v-bind:position="i"></Carton>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-2 mt-3 p-3 text-center content-cartons">
+                <div class="col-md-4 mt-3 p-3 text-center content-cartons">
                   <h6>Bingos ganadores</h6>
                   <Objetive v-bind:types="game.mode"></Objetive>
                   <hr>
@@ -112,7 +112,6 @@
                       <button type="button" class="btn btn-danger" @click="pauseGame()">Pausa</button>
                     </div>
                   </div>
-                  <hr>
                   <Time v-if="game.start"></Time>
                 </div>
               </div>
@@ -348,5 +347,21 @@ export default {
   .activeTd{
     background: #ccc;
     color: white;
+  }
+  .sequence-content{
+    width: 100px;
+    height: 400px;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+  }
+  .sequence-content::-webkit-scrollbar{
+      -webkit-appearance: none;
+  }
+
+  .sequence-content::-webkit-scrollbar-thumb {
+      background-color: #2D5259;
+      border-radius: 20px;
+      border: 5px solid #fff;
   }
 </style>

@@ -1,16 +1,17 @@
 <template>
   <div class="row">
-    <div class="col-md-12 d-flex flex-wrap justify-content-center">
-      <div class="back-bingo m-1" v-for="(coor, i) in types.coordinates" :key="i">
-        <div class="column-bingo" v-for="(col, index) in coordinatesNatives" :key="index">
-          <div :class="[getSame(coor,col[0])]" data-frame="min-frame" v-bind:data-coor="col[0]"></div>
-          <div :class="[getSame(coor,col[1])]" data-frame="min-frame" v-bind:data-coor="col[1]"></div>
-          <div :class="[getSame(coor,col[2])]" data-frame="min-frame" v-bind:data-coor="col[2]"></div>
-          <div :class="[getSame(coor,col[3])]" data-frame="min-frame" v-bind:data-coor="col[3]"></div>
-          <div :class="[getSame(coor,col[4])]" data-frame="min-frame" v-bind:data-coor="col[4]"></div>
+    <div class="col-md-12">
+      <div class="content-all-objetives d-flex flex-wrap justify-content-center">
+        <div class="back-bingo m-1" v-for="(coor, i) in types.coordinates" :key="i">
+          <div class="column-bingo" v-for="(col, index) in coordinatesNatives" :key="index">
+            <div :class="[getSame(coor,col[0])]" data-frame="min-frame" v-bind:data-coor="col[0]"></div>
+            <div :class="[getSame(coor,col[1])]" data-frame="min-frame" v-bind:data-coor="col[1]"></div>
+            <div :class="[getSame(coor,col[2])]" data-frame="min-frame" v-bind:data-coor="col[2]"></div>
+            <div :class="[getSame(coor,col[3])]" data-frame="min-frame" v-bind:data-coor="col[3]"></div>
+            <div :class="[getSame(coor,col[4])]" data-frame="min-frame" v-bind:data-coor="col[4]"></div>
+          </div>
         </div>
       </div>
-      <hr>
     </div>
   </div>
 </template>
@@ -37,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+  .content-all-objetives{
+    width: 100%;
+  }
   .back-bingo{
     width: 60px;
     height: 60px;
