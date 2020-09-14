@@ -67,7 +67,7 @@
               <audio v-if="game.sequence.length == 0" :src="sound.start" autoplay></audio>
               <Market></Market>
               <div class="row text-center">
-                <div class="col-md-8 m-0 p-0">
+                <div class="col-md-9 m-0 p-0">
                   <div class="row">
                     <div class="col-md-4">
                       <div class="row d-flex flex-row justify-content-center align-items-center">
@@ -103,7 +103,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 mt-3 p-3 text-center content-cartons">
+                <div class="col-md-3 mt-3 p-3 text-center content-cartons">
                   <h6>Bingos ganadores</h6>
                   <Objetive v-bind:types="game.mode"></Objetive>
                   <hr>
